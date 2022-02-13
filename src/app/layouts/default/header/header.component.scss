@@ -1,0 +1,32 @@
+@import "../../../shared/scss/variables";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  height: 2.7rem;
+  background-color: $color-primary-dark;
+
+  &__mobile--btn {
+    display: block;
+
+    transition: all .3s;
+  }
+
+  &__logo {
+    color: $color-white;
+  }
+
+  &__nav {
+    color: $color-white;
+  }
+}
+
+@media (min-width: 600px) {
+  .header {
+    &__mobile--btn {
+      display: none;
+    }
+  }
+}
