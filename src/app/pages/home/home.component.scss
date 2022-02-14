@@ -1,10 +1,20 @@
 @import "../../shared/scss/variables";
+@import "../../shared/scss/typography";
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 400px 1fr;
+  grid-template-columns: 100%;
+  align-items: center;
+}
+
 .home {
   height: 100%;
-  padding: .5rem;
+  padding: 0.5rem;
+  position: relative;
 
   &__content {
-    position: relative;
     background-image: linear-gradient(
         to right bottom,
         rgb(126, 213, 111, 0.8),
@@ -15,7 +25,7 @@
     background-position: center;
     background-size: cover;
 
-    height: 350px;
+    height: 100%;
   }
 }
 
@@ -63,7 +73,7 @@
 }
 
 .btn {
-    position: relative;
+  position: relative;
   &:link,
   :visited {
     text-transform: uppercase;
@@ -85,7 +95,6 @@
     box-shadow: 0 5px 10px rgb(0, 0, 0, 0.2);
   }
 
-
   &::after {
     content: "";
     display: inline-block;
@@ -96,34 +105,46 @@
     top: 0;
     left: 0;
     z-index: -1;
-    transition: all .4s;
-
+    transition: all 0.4s;
   }
 
   &--white {
     background-color: $color-white;
     color: $color-grey-dark;
 
-    &::after{
-        background-color: $color-white;
+    &::after {
+      background-color: $color-white;
     }
-
-
   }
 
-
-  &:hover::after{
-      transform: scaleX(1.4) scaleY(1.6);
-      opacity: 0;
+  &:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
   }
 
-  &--animated{
-      animation: moveInBottom .5s ease-out ;
-      animation-delay: .75s;
-      animation-fill-mode: backwards;
+  &--animated {
+    animation: moveInBottom 0.5s ease-out;
+    animation-delay: 0.75s;
+    animation-fill-mode: backwards;
+  }
+}
+
+.about {
+  height: 100%;
+  padding: 0.5rem;
+  margin-top: -30px;
+
+  &__content {
+    height: 100%;
+    background-color: $color-grey-light;
   }
 
-  
+  &__title {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+    text-align: center;
+  }
 }
 
 @keyframes moveInLeft {
@@ -155,24 +176,21 @@
 }
 
 @keyframes moveInBottom {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateX(0px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
 
 @media (min-width: 600px) {
   .home {
     &__content {
       height: 100%;
-
-  
     }
   }
 
@@ -183,7 +201,9 @@
       height: 35px;
     }
   }
-
+  .hearding-secundary--screen {
+    font-size: 1.5rem;
+  }
   .title {
     &__primary {
       &--main {
